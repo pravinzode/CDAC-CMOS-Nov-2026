@@ -51,7 +51,9 @@ cd ngspice_git
 mkdir release
 ## in order to run the following you must have adms installed (sudo apt-get install adms)
 sudo apt-get install adms
-./autogen.sh
+sudo apt update && sudo apt install -y m4 perl build-essential wget tar xz-utils
+cd /tmp && wget -q https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz && tar -xf autoconf-2.72.tar.xz && cd autoconf-2.72 && ./configure --prefix=/usr/local && make -j"$(nproc)" && sudo make install
+hash -r && which autoconf && autoconf --version && cd ~/Desktop/eda_tools/ngspice_git && ./autogen.sh
 cd release
 ## by default if no --prefix is provided ngspice will install under /usr/local/{bin,share,man,lib}
 ## you can add a --prefix=/home/username to install into your home directory.
