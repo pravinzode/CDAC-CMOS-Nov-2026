@@ -1,0 +1,15 @@
+* ==========================================================
+* Basic Semiconductor Model Library (components.lib)
+* ==========================================================
+
+* 1. Standard Switching Diode (1N4148 equivalent)
+.model D_STD D(Is=2.52n Rs=0.568 N=1.752 Cjo=4p M=0.4 tt=20n BV=100 IBV=100u)
+
+* 2. Zener Diode (5.1V Breakdown, 1N4733A equivalent)
+.model D_ZENER5V1 D(Is=1e-11 Rs=5 N=1.5 BV=5.1 IBV=5m Cjo=50p)
+
+* 3. NPN Bipolar Junction Transistor (2N2222 equivalent)
+.model Q_NPN NPN(Is=14.34f Xti=3 Eg=1.11 Vaf=74.03 Bf=255.9 Ne=1.307 Ise=14.34f Ikf=0.2847 Xtb=1.5 Br=6.092 Nc=2 Isc=0 Ikr=0 Rc=1 Cjc=7.306p Mjc=0.3416 Vjc=0.75 Fc=0.5 Cje=22.01p Mje=0.377 Vje=0.75 Tr=46.91n Tf=411.1p Itf=0.6 Vtf=1.7 Xtf=3 Rb=10)
+
+* 4. N-Channel Enhancement MOSFET (2N7000 equivalent)
+.model M_NMOS NMOS(Level=1 Vto=2.0 Kp=0.12 Rd=0.5 Rs=0.5 Cgso=20p Cgdo=10p Lambda=0.02)
